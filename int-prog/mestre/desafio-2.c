@@ -41,7 +41,7 @@ void printOption(int option){
             printf("7 - Super Poder\n");
         break;
         default:
-            printf("Opção inválida de menu");
+            printf("Opção inválida de menu. \n");
     }
 }
 
@@ -69,7 +69,7 @@ float getValueFromCard(int option, struct Card card){
            return card.superPower;
         break;
         default:
-            printf("Opção inválida de menu");
+            printf("Opção inválida de menu.\n");
     }
 }
 
@@ -156,8 +156,8 @@ void compareOption(int option, struct Card card1, struct Card card2){
       case 7:
           printf("Batalha de Super Poderes\n");
           printf("%s vs. %s\n", card1.city, card2.city);
-          printf("%s: %d\n", card1.city, card1.superPower);
-          printf("%s: %d\n", card2.city, card2.superPower);
+          printf("%s: %.2f\n", card1.city, card1.superPower);
+          printf("%s: %.2f\n", card2.city, card2.superPower);
           printf("Resultado: ");
           card1.superPower>card2.superPower ?
               printf("Carta 1 (%s) venceu!\n", card1.city) :
@@ -167,7 +167,7 @@ void compareOption(int option, struct Card card1, struct Card card2){
       break;
 
       default:
-          printf("Opção inválida de batalha");
+          printf("Opção inválida de batalha.\n");
 
   }
 }
