@@ -3,6 +3,7 @@
 //
 #include<stdio.h>
 
+//Aproveitando o conceito de OO, montei uma estrutura de dados para facilitar a gerencia dos dados
 struct Card {
     char state;
     char code[3];
@@ -91,6 +92,7 @@ int main() {
 
     printf("\n\nComparação de cartas: \n");
 
+//    O operador ternário é semelhante ao JS, então foi de fácil implementação
     printf("População: %s\n", card1.population > card2.population ? "Carta 1 venceu (1)" : "Carta 2 venceu (0)");
     printf("Área: %s\n", card1.area > card2.area ? "Carta 1 venceu (1)" : "Carta 2 venceu (0)");
     printf("PIB: %s\n", card1.gdp > card2.gdp ? "Carta 1 venceu (1)" : "Carta 2 venceu (0)");

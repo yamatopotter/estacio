@@ -3,6 +3,7 @@
 //
 #include<stdio.h>
 
+//Aproveitando o conceito de OO, montei uma estrutura de dados para facilitar a gerencia dos dados
 struct Card {
     char state;
     char code[3];

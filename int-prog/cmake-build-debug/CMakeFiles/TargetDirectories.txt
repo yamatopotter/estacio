@@ -1,3 +1,0 @@
-/home/matheus/CLionProjects/estacio/cmake-build-debug/CMakeFiles/estacio.dir
-/home/matheus/CLionProjects/estacio/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/matheus/CLionProjects/estacio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
