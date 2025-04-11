@@ -2,48 +2,62 @@
 // Created by matheus on 4/10/25.
 //
 #include <stdio.h>
+#define TAMANHO 10
+#define NAVIO 3
 
-void inicializaTabuleiro(int tabuleiro[10][10]) {
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
+void inicializaTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
             tabuleiro[i][j] = 0;
         }
     }
 }
 
-void posicionaNavio(int tabuleiro[10][10], int linha, int coluna, int tamanho, char direcao) {
+void posicionaNavio(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int tamanho, char direcao) {
     if (direcao == 'H') {
         for (int i = 0; i < tamanho; i++) {
-            tabuleiro[linha][coluna + i] = 3;
+            tabuleiro[linha][coluna + i] = NAVIO;
         }
     } else if (direcao == 'V') {
         for (int i = 0; i < tamanho; i++) {
-            tabuleiro[linha + i][coluna] = 3;
+            tabuleiro[linha + i][coluna] = NAVIO;
         }
     }
 }
 
-int podePosicionarNavio(int tabuleiro[10][10], int linha, int coluna, int tamanho, char direcao) {
+int podePosicionarNavio(int tabuleiro[TAMANHO][TAMANHO], int linha, int coluna, int tamanho, char direcao) {
     if (direcao == 'H') {
-        if (coluna + tamanho > 10) return 0;
+        if (coluna + tamanho > TAMANHO) return 0;
         for (int i = 0; i < tamanho; i++) {
             if (tabuleiro[linha][coluna + i] != 0) return 0;
         }
     } else if (direcao == 'V') {
-        if (linha + tamanho > 10) return 0;
+        if (linha + tamanho > TAMANHO) return 0;
         for (int i = 0; i < tamanho; i++) {
             if (tabuleiro[linha + i][coluna] != 0) return 0;
         }
-    } else {
+    } else if(direcao == 'A'){
+
+    }else if(direcao == 'B'){
+
+    }
+    else if(direcao == 'C'){
+
+    }
+    else if(direcao == 'D'){
+
+    }
+
+    else {
         return 0;
     }
     return 1;
 }
 
-void exibeTabuleiro(int tabuleiro[10][10]) {
+void exibeTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
     printf("Tabuleiro:\n");
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
             printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");
@@ -51,7 +65,7 @@ void exibeTabuleiro(int tabuleiro[10][10]) {
 }
 
 int main(){
-    int tabuleiro[10][10];
+    int tabuleiro[TAMANHO][TAMANHO];
 
     //    inicializando o tabuleiro com todas as posições em zero
     inicializaTabuleiro(tabuleiro);
@@ -60,16 +74,16 @@ int main(){
     int linha1 = 2, coluna1 = 1; // Horizontal
     int linha2 = 5, coluna2 = 4; // Vertical
 
-    if (podePosicionarNavio(tabuleiro, linha1, coluna1, 3, 'H')) {
-        posicionaNavio(tabuleiro, linha1, coluna1, 3, 'H');
+    if (podePosicionarNavio(tabuleiro, linha1, coluna1, NAVIO, 'H')) {
+        posicionaNavio(tabuleiro, linha1, coluna1, NAVIO, 'H');
     }
     else {
         printf("Não foi possível posicionar o navio horizontal.\n");
         return 1;
     }
 
-    if (podePosicionarNavio(tabuleiro, linha2, coluna2, 3, 'V')) {
-        posicionaNavio(tabuleiro, linha2, coluna2, 3, 'V');
+    if (podePosicionarNavio(tabuleiro, linha2, coluna2, NAVIO, 'V')) {
+        posicionaNavio(tabuleiro, linha2, coluna2, NAVIO, 'V');
     } else {
         printf("Não foi possível posicionar o navio vertical.\n");
         return 1;
