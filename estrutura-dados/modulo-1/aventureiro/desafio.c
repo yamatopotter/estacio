@@ -132,7 +132,8 @@ int main() {
                 scanf("%d", &territorioDefensor);
                 limparBufferEntrada();
 
-                while (territorios[territorioAtacante - 1].cor == territorios[territorioDefensor - 1].cor) {
+                //Comparação entre os territórios escolhidos para saber se a cor é a mesma
+                while (strcmp(territorios[territorioAtacante - 1].cor, territorios[territorioDefensor - 1].cor) == 0) {
                     printf("ERRO - Você não pode se atacar.\n\n");
                     printf("Digite qual território irá se defender\n");
                     scanf("%d", &territorioDefensor);
